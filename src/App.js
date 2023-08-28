@@ -11,6 +11,7 @@ function App() {
             href="https://github.com/ShivaSalehnia/weather-app"
             target="_blank"
             rel="noreferrer"
+            className="openSourceLink"
           >
             open sourced
           </a>{" "}

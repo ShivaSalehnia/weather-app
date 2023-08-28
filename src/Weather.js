@@ -5,34 +5,54 @@ export default function Weather() {
     <div className="WeatherEverywhere">
       <h1>Weather Everywhere</h1>
       <h2>Check Every City's Weather Before Travelling</h2>
-      <h4>Curious about the weather of ... </h4>
-      <form>
-        <div className="row">
-          <div className="col-md-9">
-            <input type="search" placeholder="Search City" />
+
+      <div className="SearchSection">
+        <h4>Curious about the weather of ... </h4>
+        <form>
+          <div className="row">
+            <div className="col-sm-9">
+              <input
+                type="search"
+                className="form-control w-100"
+                placeholder="Search City"
+              />
+            </div>
+            <div className="col-sm-3">
+              <input
+                type="submit"
+                value="Find"
+                className="btn btn-warning m-0"
+              />
+            </div>
           </div>
-          <div className="col-md-3">
-            <input type="submit" value="Find" className="btn btn-primary" />
+        </form>
+        <div className="row CityTemp d-flex justify-content-center">
+          <div className="col-sm-6 p-0 w-80">
+            <h4 className="City">Tehran</h4>
+          </div>
+
+          <div className="col-sm-6 p-0 w-80">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="weather-icon"
+              className="img-fluid"
+            />
           </div>
         </div>
-      </form>
-      <div className="row">
-        <div className="col-md-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="weather-icon"
-          />
-        </div>
-        <div className="col-md-6">
-          <h4>Tehran</h4>
-          <h5>Now</h5>
-          <ul>
-            <li>Temprature: 38 ℃</li>
-            <li>Humidity: 20 %</li>
-            <li>Wind: 4 km/h</li>
-            <li>Description: Partly Cloudy</li>
-          </ul>
-        </div>
+        <ul className="WeatherState">
+          <li>
+            <strong>Temprature:</strong> 38 ℃{" "}
+          </li>
+          <li>
+            <strong>Humidity:</strong> 20 %
+          </li>
+          <li>
+            <strong>Wind:</strong> 4 km/h
+          </li>
+          <li>
+            <strong>Description:</strong> Partly Cloudy
+          </li>
+        </ul>
       </div>
     </div>
   );

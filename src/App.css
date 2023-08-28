@@ -1,0 +1,14 @@
+.App {
+  margin: 0 auto;
+  display: block;
+  max-width: 700px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.App footer {
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+}
+.openSourceLink {
+  color: #f5c908e9;
+}

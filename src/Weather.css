@@ -1,0 +1,53 @@
+body {
+  margin-top: 100px;
+}
+
+.WeatherEverywhere h1 {
+  font-family: "ADLaM Display", cursive;
+  text-align: center;
+  font-size: 45px;
+}
+
+.WeatherEverywhere h2 {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 45px;
+}
+.SearchSection h4 {
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  font-weight: 300;
+}
+.SearchSection {
+  border: 1px solid;
+  border-radius: 6px;
+  border-color: rgb(241, 237, 237);
+  padding: 10px 10px 0 0;
+}
+.SearchSection form {
+  margin-left: 25px;
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+}
+.CityTemp {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.WeatherState {
+  list-style-type: none;
+  font-family: "Lato", sans-serif;
+  display: inline-flex;
+  text-align: center;
+}
+
+.WeatherState li {
+  margin-right: 17px;
+  font-weight: 300;
+}
+.CityTemp .City {
+  text-align: right;
+  margin-right: 5px;
+  font-weight: 400;
+}
