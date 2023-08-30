@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 export default function Weather(props) {
   let [Weather, setWeather] = useState({ ready: false });
   function handleResponse(response) {
@@ -12,6 +13,7 @@ export default function Weather(props) {
       Wind: Math.round(response.data.wind.speed),
       Description: response.data.weather[0].description,
       Icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -41,17 +43,17 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
-          <div className="row CityTemp d-flex justify-content-center">
-            <div className="col-sm-6 p-0 w-80">
-              <h4 className="City">{Weather.name}</h4>
-            </div>
-
-            <div className="col-sm-6 p-0 ">
+          <div className="row CityTemp">
+            <div className="col-sm-6 ">
               <img
                 src={`https://openweathermap.org/img/wn/${Weather.Icon}@2x.png`}
                 alt={Weather.Description}
-                className="img-fluid"
+                className="img-fluid naughtyImage"
               />
+            </div>
+            <div className="col-sm-6 p-0 w-80">
+              <h4 className="City">{Weather.name}</h4>
+              <FormattedDate date={Weather.date} />
             </div>
           </div>
           <ul className="WeatherState">

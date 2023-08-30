@@ -47,7 +47,11 @@ body {
   font-weight: 300;
 }
 .CityTemp .City {
-  text-align: right;
+  text-align: left;
   margin-right: 5px;
   font-weight: 400;
+}
+.naughtyImage {
+  float: right;
+  margin: 0 auto;
 }
