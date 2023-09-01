@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 export default function Weather(props) {
   let [Weather, setWeather] = useState({ ready: false });
   const [cityName, setCityName] = useState(props.city);
@@ -55,18 +56,17 @@ export default function Weather(props) {
                 <input
                   type="submit"
                   value="Find"
-                  className="btn btn-warning m-0"
+                  className="btn btn-outline-dark buttonColor"
+                  data-toggle="button"
+                  aria-pressed="false"
+                  autocomplete="off"
                 />
               </div>
             </div>
           </form>
           <div className="row CityTemp">
-            <div className="col-sm-6 ">
-              <img
-                src={`https://openweathermap.org/img/wn/${Weather.Icon}@2x.png`}
-                alt={Weather.Description}
-                className="img-fluid naughtyImage"
-              />
+            <div className="col-sm-6">
+              <WeatherIcon data={Weather.Icon} />
             </div>
             <div className="col-sm-6 p-0 w-80">
               <h4 className="City">{Weather.name}</h4>
