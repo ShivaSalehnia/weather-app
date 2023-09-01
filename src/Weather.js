@@ -4,6 +4,8 @@ import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 export default function Weather(props) {
   let [Weather, setWeather] = useState({ ready: false });
+  const [cityName, setCityName] = useState(props.city);
+
   function handleResponse(response) {
     setWeather({
       ready: true,
@@ -17,6 +19,20 @@ export default function Weather(props) {
     });
   }
 
+  function searchCity() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=f3009e4852fa0a079dab291dabf020c4&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchCity();
+  }
+
+  function handleCity(event) {
+    setCityName(event.target.value);
+  }
+
   if (Weather.ready) {
     return (
       <div className="WeatherEverywhere">
@@ -25,13 +41,14 @@ export default function Weather(props) {
 
         <div className="SearchSection">
           <h4>Curious about the weather of ... </h4>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-sm-9">
                 <input
                   type="search"
                   className="form-control w-100"
                   placeholder="Search City"
+                  onChange={handleCity}
                 />
               </div>
               <div className="col-sm-3">
@@ -75,8 +92,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=f3009e4852fa0a079dab291dabf020c4&units=metric`;
-    axios.get(url).then(handleResponse);
+    searchCity();
     return "Is Loading ...";
   }
 }
