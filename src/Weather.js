@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherUnit from "./WeatherUnit";
 export default function Weather(props) {
   let [Weather, setWeather] = useState({ ready: false });
   const [cityName, setCityName] = useState(props.city);
@@ -75,7 +76,7 @@ export default function Weather(props) {
           </div>
           <ul className="WeatherState">
             <li>
-              <strong>Temprature:</strong> {Weather.temprature} ℃{" "}
+              <WeatherUnit celsius={Weather.temprature} />
             </li>
             <li>
               <strong>Humidity:</strong> {Weather.humidity} %
