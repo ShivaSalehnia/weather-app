@@ -1,0 +1,14 @@
+.neateCol {
+  text-align: right;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.MaxMinTempDay {
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+.WeatherForcast-Day {
+  font-weight: 400;
+}

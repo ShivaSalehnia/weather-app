@@ -4,6 +4,7 @@ import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherUnit from "./WeatherUnit";
+import WeatherForcast from "./WeatherForcast";
 export default function Weather(props) {
   let [Weather, setWeather] = useState({ ready: false });
   const [cityName, setCityName] = useState(props.city);
@@ -67,7 +68,7 @@ export default function Weather(props) {
           </form>
           <div className="row CityTemp">
             <div className="col-sm-6">
-              <WeatherIcon data={Weather.Icon} />
+              <WeatherIcon data={Weather.Icon} size={64} />
             </div>
             <div className="col-sm-6 p-0 w-80">
               <h4 className="City">{Weather.name}</h4>
@@ -89,6 +90,7 @@ export default function Weather(props) {
               <span className="text-capitalize">{Weather.Description}</span>
             </li>
           </ul>
+          <WeatherForcast />
         </div>
       </div>
     );
