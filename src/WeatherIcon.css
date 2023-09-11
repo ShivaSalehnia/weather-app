@@ -1,5 +1,5 @@
 .naughtyImage {
-  float: right;
+  float: left;
   margin: 0 auto;
-  margin-left: 2px;
+  padding-right: 3px;
 }

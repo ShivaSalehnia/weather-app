@@ -19,6 +19,7 @@ export default function Weather(props) {
       Description: response.data.weather[0].description,
       Icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
   }
 
@@ -45,7 +46,7 @@ export default function Weather(props) {
         <div className="SearchSection">
           <h4>Curious about the weather of ... </h4>
           <form onSubmit={handleSubmit}>
-            <div className="row">
+            <div className="row mb-3">
               <div className="col-sm-9">
                 <input
                   type="search"
@@ -67,12 +68,12 @@ export default function Weather(props) {
             </div>
           </form>
           <div className="row CityTemp">
-            <div className="col-sm-6">
-              <WeatherIcon data={Weather.Icon} size={64} />
-            </div>
             <div className="col-sm-6 p-0 w-80">
               <h4 className="City">{Weather.name}</h4>
               <FormattedDate date={Weather.date} />
+            </div>
+            <div className="col-sm-6">
+              <WeatherIcon data={Weather.Icon} size={64} />
             </div>
           </div>
           <ul className="WeatherState">
@@ -90,7 +91,7 @@ export default function Weather(props) {
               <span className="text-capitalize">{Weather.Description}</span>
             </li>
           </ul>
-          <WeatherForcast />
+          <WeatherForcast coordinates={Weather.coordinates} />
         </div>
       </div>
     );

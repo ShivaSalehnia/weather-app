@@ -1,0 +1,12 @@
+.WeatherForecastDay {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.MaxMinTempDay {
+  font-size: 13px;
+}
+
+.WeatherForcast-Day {
+  font-weight: 400;
+}
